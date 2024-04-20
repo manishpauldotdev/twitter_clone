@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:twitter_clone/features/auth/views/login_view.dart';
+import 'package:twitter_clone/features/auth/views/signup_view.dart';
 import 'package:twitter_clone/theme/theme.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
       theme: AppTheme.theme,
       home: const Scaffold(
         body: Center(
-          child: LoginView(),
+          child: SignupView(),
         ),
       ),
     );
