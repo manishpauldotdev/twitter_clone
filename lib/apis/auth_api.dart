@@ -30,7 +30,7 @@ class AuthApi implements IAuthAPi {
   }) async {
     try {
       final account = await _account.create(
-        userId: ID.unique(),
+        userId: 'unique()',
         email: email,
         password: password,
       );
