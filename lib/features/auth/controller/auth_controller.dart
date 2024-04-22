@@ -4,10 +4,17 @@ import 'package:twitter_clone/apis/auth_api.dart';
 import 'package:twitter_clone/core/utils.dart';
 import 'package:twitter_clone/features/auth/views/login_view.dart';
 import 'package:twitter_clone/features/home/view/home_view.dart';
+import 'package:appwrite/models.dart' as model;
 
 final authControllerProvider =
     StateNotifierProvider<AuthController, bool>((ref) {
   return AuthController(authApi: ref.watch(authApiProvider));
+});
+
+final currentUserAccountProvider = FutureProvider((ref) {
+  final authController = ref.watch(authControllerProvider.notifier);
+
+  return authController.currentUser();
 });
 
 class AuthController extends StateNotifier<bool> {
@@ -60,4 +67,6 @@ class AuthController extends StateNotifier<bool> {
       },
     );
   }
+
+  Future<model.User?> currentUser() => _authApi.currentUserAccount();
 }
