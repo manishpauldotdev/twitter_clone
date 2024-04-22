@@ -14,4 +14,16 @@ class UIConstants {
       centerTitle: true,
     );
   }
+
+  static List<Widget> bottomTabBarPages = [
+    const Center(
+      child: Text('Feed Screen'),
+    ),
+    const Center(
+      child: Text('Search Screen'),
+    ),
+    const Center(
+      child: Text('Notification Screen'),
+    ),
+  ];
 }
